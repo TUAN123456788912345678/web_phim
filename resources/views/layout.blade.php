@@ -93,58 +93,32 @@
                   <div class="menu-menu_1-container">
                      <ul id="menu-menu_1" class="nav navbar-nav navbar-left">
                         <li class="current-menu-item active"><a title="Trang Chủ" href="{{route('homepage')}}">Trang Chủ</a></li>
-                        <li class="mega"><a title="Phim Mới" href="{{url('danh-muc')}}">Phim Mới</a></li>
                         <li class="mega dropdown">
-                           <a title="Năm" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">Năm <span class="caret"></span></a>
-                           <ul role="menu" class=" dropdown-menu">
-                              <li><a title="Phim 2020" href="danhmuc.php">Phim 2023</a></li>
-                              <li><a title="Phim 2020" href="danhmuc.php">Phim 2022</a></li>
-                              <li><a title="Phim 2020" href="danhmuc.php">Phim 2021</a></li>
-                              <li><a title="Phim 2020" href="danhmuc.php">Phim 2020</a></li>
-                              <li><a title="Năm 2019" href="danhmuc.php">Năm 2019</a></li>
-                              <li><a title="Năm 2018" href="danhmuc.php">Năm 2018</a></li>
+                           <a title="Danh Mục" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">Danh Mục <span class="caret"></span></a>
+                            <ul role="menu" class=" dropdown-menu">
+                             @foreach($category as $key => $cate)   
+                           <li class="mega"><a title="{{$cate->title}}" href="{{url('danh-muc', $cate->slug)}}">{{$cate->title}}</a></li>
+                             @endforeach
                            </ul>
                         </li>
+                       
+                        
                         <li class="mega dropdown">
                            <a title="Thể Loại" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">Thể Loại <span class="caret"></span></a>
                            <ul role="menu" class=" dropdown-menu">
-                              <li><a title="Tâm Lý" href="{{url('the-loai')}}">Tâm Lý</a></li>
-                              <li><a title="Hành động" href="{{url('the-loai')}}">Hành động</a></li>
-                              <li><a title="Viễn Tưởng" href="{{url('the-loai')}}">Viễn Tưởng</a></li>
-                              <li><a title="Hoạt Hình" href="{{url('the-loai')}}">Hoạt Hình</a></li>
-                              <li><a title="Kinh Dị" href="{{url('the-loai')}}">Kinh Dị</a></li>
-                              <li><a title="Hài Hước" href="{{url('the-loai')}}">Hài Hước</a></li>
-                              <li><a title="Hình Sự" href="{{url('the-loai')}}">Hình Sự</a></li>
-                              <li><a title="Võ Thuật" href="{{url('the-loai')}}">Võ Thuật</a></li>
-                              <li><a title="Cổ Trang" href="{{url('the-loai')}}">Cổ Trang</a></li>
-                              <li><a title="Phim Ma" href="{{url('the-loai')}}">Phim Ma</a></li>
-                              <li><a title="Tình Cảm" href="{{url('the-loai')}}">Tình Cảm</a></li>
-                              <li><a title="Thể Thao - Âm Nhạc" href="{{url('the-loai')}}">Thể Thao &#8211; Âm Nhạc</a></li>
-                              <li><a title="Thần Thoại" href="{{url('the-loai')}}">Thần Thoại</a></li>
-                              <li><a title="Tài Liệu" href="{{url('the-loai')}}">Tài Liệu</a></li>
-                              <li><a title="Phiêu Lưu" href="{{url('the-loai')}}">Phiêu Lưu</a></li>
-                              <li><a title="Gia Đình" href="{{url('the-loai')}}">Gia Đình</a></li>
-                              <li><a title="Chiến Tranh" href="{{url('the-loai')}}">Chiến Tranh</a></li>
+                            @foreach($genre as $key => $gen) 
+                              <li><a title="{{$cate->genre}}" href="{{url('the-loai', $gen->slug)}}">{{$gen->title}}</a></li>
+                             @endforeach
                            </ul>
                         </li>
                         <li class="mega dropdown">
                            <a title="Quốc Gia" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">Quốc Gia <span class="caret"></span></a>
                            <ul role="menu" class=" dropdown-menu">
-                              <li><a title="Việt nam" href="{{url('quoc-gia')}}">Việt nam</a></li>
-                              <li><a title="Ấn Độ" href="{{url('quoc-gia')}}">Ấn Độ</a></li>
-                              <li><a title="Mỹ" href="{{url('quoc-gia')}}">Mỹ</a></li>
-                              <li><a title="Hồng Kông" href="{{url('quoc-gia')}}">Hồng Kông</a></li>
-                              <li><a title="Nhật Bản" href="{{url('quoc-gia')}}">Nhật Bản</a></li>
-                              <li><a title="Trung Quốc" href="{{url('quoc-gia')}}">Trung Quốc</a></li>
-                              <li><a title="Hàn Quốc" href="{{url('quoc-gia')}}">Hàn Quốc</a></li>
-                              <li><a title="Đài Loan" href="{{url('quoc-gia')}}">Đài Loan</a></li>
-                              <li><a title="Thái Lan" href="{{url('quoc-gia')}}">Thái Lan</a></li>
-                              <li><a title="Philippin" href="{{url('quoc-gia')}}">Philippin</a></li>
+                             @foreach($country as $key => $count)
+                              <li><a title="{{$cate->country}}" href="{{url('quoc-gia', $count->slug)}}">{{$count->title}}</a></li>
+                             @endforeach
                            </ul>
                         </li>
-                        <li><a title="Phim Lẻ" href="{{url('quoc-gia')}}">Phim Lẻ</a></li>
-                        <li><a title="Phim Bộ" href="{{url('quoc-gia')}}">Phim Bộ</a></li>
-                        <li><a title="Phim Chiếu Rạp" href="{{url('quoc-gia')}}">Phim Chiếu Rạp</a></li>
                      </ul>
                   </div>
                   <ul class="nav navbar-nav navbar-left" style="background:#000;">
